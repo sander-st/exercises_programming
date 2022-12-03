@@ -18,8 +18,12 @@
           strHours = `${getHour}:${getMinutes}:${date.getSeconds()}`
 
       // styles
+      let gradient = ctx.createLinearGradient(0,250,500,250)
+      gradient.addColorStop(0, '#ff0000')
+      gradient.addColorStop(1, '#00ff00')
+
       ctx.clearRect(0,0,500,500)
-      ctx.strokeStyle = 'lightgreen'
+      ctx.strokeStyle = gradient
       ctx.lineCap = 'round'
       ctx.lineWidth = '20'
       ctx.shadowBlur = '10'
@@ -40,7 +44,7 @@
       // text time
       ctx.font = '40px Cascadia Code'
       ctx.fillStyle = 'white'
-      ctx.fillText(strHours,250,250)
+      ctx.fillText(strHours,157,270)
     }
 
     setInterval(drawClock,100)
